@@ -5,10 +5,10 @@ public class SaleItem {
     private int quantity;
     private double unitPrice;
 
-    public SaleItem(Product product,int quantity, double unitPrice){
+    public SaleItem(Product product,int quantity){
         this.product=product;
         this.quantity=quantity;
-        this.unitPrice=unitPrice;
+        this.unitPrice=product.getPrice();
     }
     public Product getProduct(){
         return product;
@@ -16,12 +16,16 @@ public class SaleItem {
     public  int getQuantity(){
         return quantity;
     }
-    public int getUnitPrice(){
+    public double getUnitPrice(){
         return unitPrice;
     }
     public double getSubtotal(){
         return quantity*unitPrice;
     }
+    public void addquantity(int quantity){
+        this.quantity=this.quantity+quantity;
+    }
+
 
 }
 
